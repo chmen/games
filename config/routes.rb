@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  root 'main#inbdex'
+
+  #post 'employye' => 'emploeys@create'
+  #post 'game' => 'games@create'
+
+  #post 'game/:id' => 'game@update'
   resources :assignments
   resources :employees
   resources :games

@@ -15,7 +15,8 @@
     <%= f.label :game_id %><br>
     
     <%= f.collection_select(:game_id, Game.all, :id, :name) %>
-    
+  </div>
+
   <div class="field">
     <%= f.label :live %><br>
     <%= f.check_box :live %>
