@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :assignments
   root 'main#inbdex'
 
   #post 'employye' => 'emploeys@create'
   #post 'game' => 'games@create'
 
   #post 'game/:id' => 'game@update'
-  resources :assignments
   resources :employees
   resources :games
   # The priority is based upon order of creation: first created -> highest priority.

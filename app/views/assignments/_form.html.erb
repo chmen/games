@@ -13,13 +13,15 @@
 
   <div class="field">
     <%= f.label :game_id %><br>
-    
-    <%= f.collection_select(:game_id, Game.all, :id, :name) %>
+    <%= f.text_field :game_id %>
   </div>
-
   <div class="field">
-    <%= f.label :live %><br>
-    <%= f.check_box :live %>
+    <%= f.label :employee_id %><br>
+    <%= f.text_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :role %><br>
+    <%= f.number_field :role %>
   </div>
   <div class="actions">
     <%= f.submit %>

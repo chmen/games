@@ -2,8 +2,10 @@
 
 one:
   game_id: 
-  live: false
+  employee_id: 
+  role: 1
 
 two:
   game_id: 
-  live: false
+  employee_id: 
+  role: 1
