@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :game_id %><br>
-    <%= f.text_field :game_id %>
+    <%= f.collection_select(:game_id, Game.all, :id, :name)  %>
   </div>
   <div class="field">
     <%= f.label :employee_id %><br>
-    <%= f.text_field :employee_id %>
+    <%= f.collection_select(:employee_id, Employee.all, :id, :name)  %>
   </div>
   <div class="field">
     <%= f.label :role %><br>
