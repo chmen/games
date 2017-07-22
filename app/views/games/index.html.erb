@@ -2,7 +2,7 @@
 
 <h1>Listing Games</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,7 +18,7 @@
 
   <tbody>
     <% @games.each do |game| %>
-      <tr>
+      <tr class="active">
         <td><%= game.name %></td>
         <td><%= game.employee_name(game.id, 1)%></td>
         <td><%= game.employee_name(game.id, 2)%></td>
