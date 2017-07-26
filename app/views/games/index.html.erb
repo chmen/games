@@ -20,11 +20,11 @@
     <% @games.each do |game| %>
       <tr class="active">
         <td><%= game.name %></td>
-        <td><%= game.employee_name(game.id, 1)%></td>
-        <td><%= game.employee_name(game.id, 2)%></td>
-        <td><%= game.employee_name(game.id, 3)%></td>
-        <td><%= game.employee_name(game.id, 4)%></td>
-        <td><%= game.employee_name(game.id, 5)%></td>
+        <td><%= game.employee_name(game.id, 1)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
+        <td><%= game.employee_name(game.id, 2)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
+        <td><%= game.employee_name(game.id, 3)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
+        <td><%= game.employee_name(game.id, 4)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
+        <td><%= game.employee_name(game.id, 5)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
         <td><%= game.live %></td>
       </tr>
     <% end %>
@@ -68,6 +68,23 @@
       <div class="modal-body">
         <% @employee = Employee.new %>
         <%= render 'employees/form' %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="editAssignment" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit</h4>
+      </div>
+      <div class="modal-body">
+        
       </div>
     </div>
 
