@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #post 'game' => 'games@create'
 
   #post 'game/:id' => 'game@update'
-  resources :assignments 
+  resources :assignments
   resources :employees
   resources :games do
     resources :assignments 

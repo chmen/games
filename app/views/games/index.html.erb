@@ -35,3 +35,44 @@
 
 <%= link_to 'Add Game', new_game_path, class: 'btn btn-primary' %>
 <%= link_to 'Add Employee', new_employee_path, class: 'btn btn-primary' %>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGame">Add Game</button>
+
+
+<div id="addGame" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Game</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(Game.new) do |f| %>
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :packageName %><br>
+            <%= f.text_field :packageName %>
+          </div>
+          <div class="field">
+            <%= f.label :Store %><br>
+            <%= f.text_field :Store %>
+          </div>
+          <div class="field">
+            <%= f.label :live %><br>
+            <%= f.check_box :live %>
+          </div>
+          <div class="actions">
+          </div>
+      </div>
+      <div class="modal-footer">
+            <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
