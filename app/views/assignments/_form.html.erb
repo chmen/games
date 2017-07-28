@@ -1,15 +1,4 @@
-<%= form_for(@assignment) do |f| %>
-  <% if @assignment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
-
-      <ul>
-      <% @assignment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for :assignment do |f| %>
 
   <div class="field">
     <%= f.label :game_id %><br>
@@ -24,6 +13,6 @@
     <%= f.text_field :role %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Assign', class: 'btn btn-primary'%>
   </div>
 <% end %>
