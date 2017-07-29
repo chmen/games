@@ -19,21 +19,19 @@
     <% @games.each do |game| %>
       <tr class="active">
         <td><%= game.name %></td>
-
-        <td><%= game.employee_name(game.id, 1)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
-        <td><%= game.employee_name(game.id, 2)%>
-        <button type="button" 
+        
+        <% Employee.roles.each do |role, enum| %>
+          <td> <%= game.employee_name(game.id, enum) %>
+          <button type="button" 
           class="btn btn-primary add-assigment" 
           data-game-id="<%= game.id %>"
           data-game-name="<%= game.name %>" 
-          data-role="illustrator"
+          data-role="<%= role %>"
           data-toggle="modal" data-target="#editAssignment"
           >+</button>
+          </td>
+        <% end %>
 
-        </td>
-        <td><%= game.employee_name(game.id, 3)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
-        <td><%= game.employee_name(game.id, 4)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
-        <td><%= game.employee_name(game.id, 5)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
         <td><%= game.live %></td>
       </tr>
     <% end %>
