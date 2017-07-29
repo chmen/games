@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  
-  # root 'games#index'
-
   #post 'employye' => 'emploeys@create'
   #post 'game' => 'games@create'
 
