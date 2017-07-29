@@ -1,5 +1,5 @@
 class DropAssignmentsTable < ActiveRecord::Migration
- def up
+  def up
     drop_table :assignments
   end
 

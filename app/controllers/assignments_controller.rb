@@ -7,10 +7,11 @@ class AssignmentsController < ApplicationController
 
   def create
     @assignment = Assignment.new(assignment_params)
-
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to games_path, notice: 'Assignment was successfully created.' }
+        format.html do
+          redirect_to games_path, notice: 'Assignment was successfully created.'
+        end
       else
         format.html { render :new }
       end
@@ -20,7 +21,9 @@ class AssignmentsController < ApplicationController
   def update
     respond_to do |format|
       if @assignment.update(assignment_params)
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
+        format.html do
+          redirect_to @assignment, notice: 'Assignment was successfully updated.'
+        end
       else
         format.html { render :edit }
       end
@@ -28,13 +31,14 @@ class AssignmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_assignment
-      @assignment = Assignment.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def assignment_params
-      params.require(:assignment).permit(:game_id, :employee_id, :role)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_assignment
+    @assignment = Assignment.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def assignment_params
+    params.require(:assignment).permit(:game_id, :employee_id, :role)
+  end
 end

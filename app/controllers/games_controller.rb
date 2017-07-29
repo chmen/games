@@ -17,7 +17,9 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to games_path, notice: 'Game was successfully created.' }
+        format.html do
+          redirect_to games_path, notice: 'Game was successfully created.'
+        end
       else
         format.html { render :new }
       end
@@ -27,7 +29,9 @@ class GamesController < ApplicationController
   def update
     respond_to do |format|
       if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html do
+          redirect_to @game, notice: 'Game was successfully updated.'
+        end
       else
         format.html { render :edit }
       end
@@ -35,11 +39,12 @@ class GamesController < ApplicationController
   end
 
   private
-    def set_game
-      @game = Game.find(params[:id])
-    end
 
-    def game_params
-      params.require(:game).permit(:name, :packageName, :Store, :live)
-    end
+  def set_game
+    @game = Game.find(params[:id])
+  end
+
+  def game_params
+    params.require(:game).permit(:name, :packageName, :Store, :live)
+  end
 end

@@ -1,5 +1,4 @@
 class EmployeesController < ApplicationController
-
   def new
     @employee = Employee.new
   end
@@ -9,7 +8,9 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to games_path, notice: 'Employee was successfully created.' }
+        format.html do
+          redirect_to games_path, notice: 'Employee was successfully created.'
+        end
       else
         format.html { render :new }
       end
@@ -17,7 +18,8 @@ class EmployeesController < ApplicationController
   end
 
   private
-    def employee_params
-      params.require(:employee).permit(:name, :role)
-    end
+
+  def employee_params
+    params.require(:employee).permit(:name, :role)
+  end
 end
