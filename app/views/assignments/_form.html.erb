@@ -2,7 +2,8 @@
 
   <div class="field">
     <%= f.label :game_id %><br>
-    <%= f.collection_select(:game_id, Game.all, :id, :name)  %>
+    <p id="game-name"></p>
+    <%= f.hidden_field :game_id %>
   </div>
   <div class="field">
     <%= f.label :employee_id %><br>
@@ -10,7 +11,7 @@
   </div>
   <div class="field">
     <%= f.label :role %><br>
-    <%= f.text_field :role %>
+    <%= f.text_field :role, :readonly => true %>
   </div>
   <div class="actions">
     <%= f.submit 'Assign', class: 'btn btn-primary'%>

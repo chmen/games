@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :role %><br>
-    <%= f.text_field :role %>
+    <%= f.select :role, :collection => Employee.roles.keys.to_a %>
   </div>
   <div class="actions">
     <%= f.submit 'Add', class: 'btn btn-primary' %>

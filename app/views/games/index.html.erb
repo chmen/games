@@ -21,7 +21,16 @@
         <td><%= game.name %></td>
 
         <td><%= game.employee_name(game.id, 1)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
-        <td><%= game.employee_name(game.id, 2)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
+        <td><%= game.employee_name(game.id, 2)%>
+        <button type="button" 
+          class="btn btn-primary add-assigment" 
+          data-game-id="<%= game.id %>"
+          data-game-name="<%= game.name %>" 
+          data-role="illustrator"
+          data-toggle="modal" data-target="#editAssignment"
+          >+</button>
+
+        </td>
         <td><%= game.employee_name(game.id, 3)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
         <td><%= game.employee_name(game.id, 4)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
         <td><%= game.employee_name(game.id, 5)%><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAssignment">+</button></td>
@@ -84,7 +93,7 @@
         <h4 class="modal-title">Edit</h4>
       </div>
       <div class="modal-body">
-        
+         <%= render 'assignments/form' %>
       </div>
     </div>
 
