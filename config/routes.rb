@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   
-  root 'main#inbdex'
+  root 'games#index'
 
   #post 'employye' => 'emploeys@create'
   #post 'game' => 'games@create'
